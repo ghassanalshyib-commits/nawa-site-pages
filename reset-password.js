@@ -17,7 +17,23 @@ async function prepareResetSession() {
   const access_token = hashParams.get("access_token");
   const refresh_token = hashParams.get("refresh_token");
   const type = hashParams.get("type");
+  const queryType = searchParams.get("type");
+  const token_hash = searchParams.get("token_hash") || hashParams.get("token_hash");
   const code = searchParams.get("code");
+  if ((queryType === "recovery" || type === "recovery") && token_hash) {
+    const { error } = await supabaseClient.auth.verifyOtp({
+      token_hash,
+      type: "recovery"
+    });
+    if (error) {
+      showResetMessage("طھط¹ط°ط± طھظپط¹ظٹظ„ ط±ط§ط¨ط· ط§ظ„ط§ط³طھط±ط¬ط§ط¹: " + error.message, "error");
+      return false;
+    }
+    canUpdatePassword = true;
+    window.history.replaceState(null, document.title, window.location.pathname);
+    showResetMessage("طھظ… ط§ظ„طھط­ظ‚ظ‚ ظ…ظ† ط±ط§ط¨ط· ط§ظ„ط§ط³طھط±ط¬ط§ط¹. ظٹظ…ظƒظ†ظƒ طھط¹ظٹظٹظ† ظƒظ„ظ…ط© ظ…ط±ظˆط± ط¬ط¯ظٹط¯ط©.", "success");
+    return true;
+  }
   if (type === "recovery" && access_token && refresh_token) {
     const { error } = await supabaseClient.auth.setSession({ access_token, refresh_token });
     if (error) {
