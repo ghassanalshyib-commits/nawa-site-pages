@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+<title>تسجيل الدخول | نواة</title>
+<meta name="description" content="تسجيل الدخول إلى منصة نواة لإدارة المحافظ الاستثمارية.">
+<link rel="icon" type="image/png" href="nawa-logo.png">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img class="brand-logo" src="nawa-logo.png" alt="شعار نواة">
+    <span class="brand-name">نواة</span>
+  </a>
+  <nav class="main-nav"><a href="index.html">الرئيسية</a><a href="builder.html">لوحة المحفظة</a><a href="risk.html">تقييم المخاطر</a><a href="learn.html">المركز التعليمي</a><a class="auth-guest-link active" href="login.html">تسجيل الدخول</a></nav>
+  <div class="auth-header-actions">
+  <a class="header-cta auth-guest-link" href="signup.html">إنشاء حساب</a>
+  <div class="user-menu-wrapper" hidden>
+    <button class="user-menu-button" type="button">
+      <span class="user-avatar">👤</span>
+      <span class="user-menu-label">ملف المستخدم</span>
+      <span>⌄</span>
+    </button>
+    <div class="user-dropdown" hidden>
+      <a href="dashboard.html">حسابي</a>
+      <a href="dashboard.html#saved-portfolios-list">محافظي</a>
+      <button type="button" class="logout-menu-button">تسجيل الخروج</button>
+    </div>
+  </div>
+</div>
+</header>
+
+<main class="auth-shell">
+  <section class="auth-card">
+    <div class="auth-copy">
+      <p class="eyebrow">Welcome Back</p>
+      <h1>تسجيل الدخول</h1>
+      <p>ادخل إلى حسابك لمتابعة محافظك الاستثمارية، مراجعة الأداء، وحفظ خططك المالية.</p>
+    </div>
+    <form class="auth-form" id="login-form">
+      <label>البريد الإلكتروني<input type="email" name="email" placeholder="name@email.com" required></label>
+      <label>كلمة المرور<input type="password" name="password" placeholder="••••••••" required></label>
+      <div class="auth-row">
+        <label class="auth-check"><input type="checkbox"> تذكرني</label>
+        <a href="forgot-password.html" class="auth-link">نسيت كلمة المرور؟</a>
+      </div>
+      <button class="button primary auth-submit" type="submit"><i data-lucide="log-in"></i> دخول</button>
+      <p class="auth-switch">ليس لديك حساب؟ <a href="signup.html">أنشئ حساباً جديداً</a></p>
+    </form>
+  </section>
+  <aside class="auth-side">
+    <div class="auth-side-icon"><i data-lucide="shield-check"></i></div>
+    <h2>منصة موثوقة لإدارة المحافظ</h2>
+    <p>واجهة مصممة لحفظ المحافظ، متابعة الأداء، وتخصيص التجربة حسب أهداف المستثمر.</p>
+    <div class="auth-benefits">
+      <span><i data-lucide="lock"></i> حماية الحساب</span>
+      <span><i data-lucide="pie-chart"></i> حفظ المحافظ</span>
+      <span><i data-lucide="bell"></i> تنبيهات مستقبلية</span>
+    </div>
+  </aside>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="security.js"></script>
+<script src="auth-ui.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

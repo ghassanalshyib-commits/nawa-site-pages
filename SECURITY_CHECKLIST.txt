@@ -1,0 +1,34 @@
+تمت إضافة حماية Frontend:
+
+1. Rate limiting محلي لمحاولات:
+   - تسجيل الدخول
+   - إنشاء الحساب
+   - استرجاع كلمة المرور
+   - حفظ المحافظ
+
+2. Honeypot ضد البوتات في النماذج.
+
+3. فحص قوة كلمة المرور:
+   - 8 أحرف على الأقل
+   - أحرف وأرقام ورمز أو أحرف كبيرة
+
+4. حماية صفحات الحساب:
+   - dashboard.html
+   يتم تحويل غير المسجل إلى login.html
+   أما builder.html فيبقى متاحاً للتجربة العامة، وزر حفظ المحفظة يطلب تسجيل الدخول.
+
+5. تنظيف مدخلات النصوص مثل اسم المحفظة.
+
+6. ملفات أمان للنشر:
+   - _headers لموقع Netlify
+   - vercel.json لموقع Vercel
+   - .nojekyll لموقع GitHub Pages
+
+7. ملف Supabase:
+   - supabase-security-hardening.sql
+
+مهم داخل Supabase:
+- فعّل Email Confirmation إذا رغبت بحسابات موثقة.
+- فعّل CAPTCHA من Authentication إذا كان متاحاً في خطتك.
+- لا تضع service_role key داخل ملفات الموقع أبداً.
+- استخدم Custom SMTP عند الإنتاج.

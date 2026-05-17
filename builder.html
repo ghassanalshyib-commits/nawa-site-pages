@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>لوحة المحفظة | نواة</title>
+  <meta name="description" content="لوحة تحكم احترافية لتحديد الأهداف المالية وتحمل المخاطر وتخصيص الأصول وتحليل الأداء.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+<link rel="icon" type="image/png" href="nawa-logo.png">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="نواة"><img class="brand-logo" src="nawa-logo.png" alt="شعار نواة"><span class="brand-name">نواة</span></a>
+    <nav class="main-nav" aria-label="التنقل الرئيسي"><a href="index.html">الرئيسية</a><a class="active" href="builder.html">لوحة المحفظة</a><a href="risk.html">تقييم المخاطر</a><a href="learn.html">المركز التعليمي</a><a  class="auth-guest-link"href="login.html">تسجيل الدخول</a></nav>
+    <a class="header-cta" href="risk.html">قيّم المخاطر</a>
+  <div class="auth-header-actions">
+  <a class="header-cta auth-guest-link" href="signup.html">إنشاء حساب</a>
+  <div class="user-menu-wrapper" hidden>
+    <button class="user-menu-button" type="button">
+      <span class="user-avatar">👤</span>
+      <span class="user-menu-label">ملف المستخدم</span>
+      <span>⌄</span>
+    </button>
+    <div class="user-dropdown" hidden>
+      <a href="dashboard.html">حسابي</a>
+      <a href="dashboard.html#saved-portfolios-list">محافظي</a>
+      <button type="button" class="logout-menu-button">تسجيل الخروج</button>
+    </div>
+  </div>
+</div></header>
+
+  <main class="dashboard-shell">
+    <section class="dashboard-hero">
+      <div>
+        <p class="eyebrow">لوحة إدارة المحفظة</p>
+        <h1>حوّل أهدافك إلى توزيع أصول قابل للمتابعة</h1>
+        <p class="lead compact">عدّل المدخلات وشاهد كيف تتغير المحفظة، العائد المتوقع، التذبذب، والقيمة المستقبلية فورياً.</p>
+      </div>
+      <div class="status-card"><span>حالة المنهجية</span><strong>تعليمية + ملاءمة أولية</strong><small>ليست توصية شراء أو بيع</small></div>
+    </section>
+
+    <section class="dashboard-grid">
+      <aside class="tool-panel inputs-panel">
+        <h2><i data-lucide="sliders-horizontal"></i> الأهداف وتحمل المخاطر</h2>
+        <form id="portfolio-form" class="form-grid">
+          <label>العمر<input name="age" type="number" min="18" max="75" value="35"></label>
+          <label>رأس المال الحالي<input name="capital" type="number" min="0" step="1000" value="100000"></label>
+          <label>المساهمة الشهرية<input name="monthly" type="number" min="0" step="100" value="1500"></label>
+          <label>الهدف المالي<select name="goal"><option value="balanced" selected>توازن بين النمو والدخل</option><option value="growth">نمو رأس المال</option><option value="income">دخل دوري</option><option value="retirement">تقاعد</option><option value="capitalPreservation">حفظ رأس المال</option></select></label>
+          <fieldset><legend>تحمل المخاطر</legend><div class="segmented"><label><input type="radio" name="risk" value="low"> منخفض</label><label><input type="radio" name="risk" value="medium" checked> متوسط</label><label><input type="radio" name="risk" value="high"> مرتفع</label></div></fieldset>
+          <fieldset><legend>الأفق الزمني</legend><div class="segmented"><label><input type="radio" name="horizon" value="short"> أقل من 3 سنوات</label><label><input type="radio" name="horizon" value="mid" checked> 3 إلى 7 سنوات</label><label><input type="radio" name="horizon" value="long"> أكثر من 7 سنوات</label><label><input type="radio" name="horizon" value="veryLong"> أكثر من 20 سنة</label></div></fieldset>
+          <label>احتياج السيولة<select name="liquidity"><option value="low">منخفض</option><option value="medium" selected>متوسط</option><option value="high">مرتفع</option></select></label>
+          <label>تفضيل السوق<select name="marketBias"><option value="balanced">محلي وعالمي بالتساوي</option><option value="local">تركيز محلي أعلى</option><option value="global" selected>تنويع عالمي أعلى</option></select></label>
+          <label>التفضيل الشرعي<select name="sharia"><option value="flexible" selected>مرن حسب المنتجات المتاحة</option><option value="strict">صارم: تجنب البدائل غير الواضحة</option></select></label>
+        </form>
+      </aside>
+
+      <section class="tool-panel result-panel">
+        <div class="result-heading"><div><p class="eyebrow">التخصيص المقترح</p><h2 id="result-title">محفظة متوازنة</h2></div><div class="result-actions"><span class="score-pill" id="risk-score">65/100</span><button class="button primary" id="save-portfolio-button" type="button"><i data-lucide="save"></i> حفظ المحفظة</button></div></div>
+        <div class="result-layout"><div class="allocation-ring large" id="builder-donut"><span id="dominant-asset">نمو</span></div><div class="allocation-list" id="allocation-list"></div></div>
+        <div class="insight-strip enhanced">
+          <div><span>قيمة الأسهم</span><strong id="equity-value">0</strong></div><div><span>سيولة وصكوك</span><strong id="safe-value">0</strong></div><div><span>مساهمة سنة</span><strong id="year-value">0</strong></div><div><span>عائد متوقع</span><strong id="return-value">0%</strong></div><div><span>تذبذب تقريبي</span><strong id="volatility-value">0%</strong></div><div><span>قيمة مستقبلية</span><strong id="projection-value">0</strong></div>
+        </div>
+        
+<div class="chart-card performance-pro-card">
+  <div class="chart-head performance-pro-head">
+    <div>
+      <p class="eyebrow">Performance Forecast</p>
+      <h3>تحليل الأداء المتوقع</h3>
+      <span id="chart-caption">نمو تقديري حسب الأفق</span>
+    </div>
+    <span class="forecast-chip">AI Forecast</span>
+  </div>
+
+  <div class="forecast-kpis">
+    <article>
+      <span>العائد السنوي المتوقع</span>
+      <strong id="forecast-return">0%</strong>
+    </article>
+    <article>
+      <span>القيمة المستقبلية</span>
+      <strong id="forecast-value">0</strong>
+    </article>
+    <article>
+      <span>تذبذب المحفظة</span>
+      <strong id="forecast-risk">0%</strong>
+    </article>
+  </div>
+
+  <div class="professional-chart-wrap">
+    <canvas id="performance-chart" height="300" aria-label="رسم بياني احترافي للأداء المتوقع"></canvas>
+  </div>
+
+  <div class="forecast-insights">
+    <div>
+      <strong>قراءة الأداء</strong>
+      <p id="forecast-summary">يعرض الرسم مساراً تقديرياً لنمو رأس المال مع المساهمات الشهرية.</p>
+    </div>
+    <div>
+      <strong>ملاحظة استثمارية</strong>
+      <p>الأرقام تقريبية وتعتمد على افتراضات العائد والتذبذب حسب توزيع الأصول.</p>
+    </div>
+  </div>
+</div>
+
+        <div class="notes" id="portfolio-notes"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer"><p>النسب والعوائد تقريبية وتعليمية. راجع الملاءمة الشخصية والرسوم والمخاطر قبل التنفيذ.</p></footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="security.js"></script>
+<script src="auth-ui.js"></script>
+<script src="portfolio-db.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

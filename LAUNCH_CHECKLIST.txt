@@ -1,0 +1,31 @@
+قائمة التحقق قبل رفع موقع نواة على GitHub Pages:
+
+1) ارفع ملفات الموقع إلى مستودع GitHub بدون ملف ZIP.
+2) من GitHub اختر:
+   Settings > Pages > Deploy from a branch
+   Branch: main
+   Folder: /root
+3) رابط الموقع المتوقع:
+   https://USERNAME.github.io/REPOSITORY/
+4) في Supabase > Authentication > URL Configuration:
+   Site URL:
+   https://USERNAME.github.io/REPOSITORY/
+
+   Redirect URLs:
+   https://USERNAME.github.io/REPOSITORY/**
+   https://USERNAME.github.io/REPOSITORY/reset-password.html
+5) في Supabase > Email Templates > Reset Password استخدم قالب:
+   SUPABASE_RESET_PASSWORD_EMAIL_TEMPLATE.html
+6) نفذ ملفات SQL داخل Supabase SQL Editor:
+   - supabase-portfolios.sql
+   - supabase-security-hardening.sql
+7) اختبر:
+   - إنشاء حساب ببريد حقيقي
+   - تسجيل الدخول
+   - حفظ محفظة
+   - حذف محفظة
+   - استرجاع كلمة المرور
+8) بعد معرفة الرابط النهائي استبدل USERNAME وREPOSITORY في:
+   - robots.txt
+   - sitemap.xml
+9) لا تضع service_role key داخل ملفات الموقع. استخدم anon public key فقط.

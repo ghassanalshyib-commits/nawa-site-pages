@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+<title>إنشاء حساب | نواة</title>
+<meta name="description" content="إنشاء حساب جديد في منصة نواة لإدارة المحافظ الاستثمارية.">
+<link rel="icon" type="image/png" href="nawa-logo.png">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img class="brand-logo" src="nawa-logo.png" alt="شعار نواة">
+    <span class="brand-name">نواة</span>
+  </a>
+  <nav class="main-nav"><a href="index.html">الرئيسية</a><a href="builder.html">لوحة المحفظة</a><a href="risk.html">تقييم المخاطر</a><a href="learn.html">المركز التعليمي</a><a  class="auth-guest-link"href="login.html">تسجيل الدخول</a></nav>
+  <div class="auth-header-actions">
+  <a class="header-cta auth-guest-link" href="signup.html">إنشاء حساب</a>
+  <div class="user-menu-wrapper" hidden>
+    <button class="user-menu-button" type="button">
+      <span class="user-avatar">👤</span>
+      <span class="user-menu-label">ملف المستخدم</span>
+      <span>⌄</span>
+    </button>
+    <div class="user-dropdown" hidden>
+      <a href="dashboard.html">حسابي</a>
+      <a href="dashboard.html#saved-portfolios-list">محافظي</a>
+      <button type="button" class="logout-menu-button">تسجيل الخروج</button>
+    </div>
+  </div>
+</div>
+</header>
+
+<main class="auth-shell">
+  <section class="auth-card">
+    <div class="auth-copy">
+      <p class="eyebrow">Create Account</p>
+      <h1>إنشاء حساب جديد</h1>
+      <p>ابدأ بحفظ محافظك الاستثمارية ومتابعة أهدافك المالية من لوحة واحدة.</p>
+    </div>
+    <form class="auth-form" id="signup-form">
+      <label>الاسم الكامل<input type="text" name="name" placeholder="اكتب اسمك" required></label>
+      <label>البريد الإلكتروني<input type="email" name="email" placeholder="name@email.com" required></label>
+      <label>كلمة المرور<input type="password" name="password" placeholder="8 أحرف على الأقل" minlength="8" required></label>
+      <label>تأكيد كلمة المرور<input type="password" name="confirmPassword" placeholder="أعد كتابة كلمة المرور" minlength="8" required></label>
+      <label class="auth-check full"><input type="checkbox" required> أوافق على <a href="terms.html" target="_blank">الشروط</a> و<a href="privacy.html" target="_blank">سياسة الخصوصية</a></label>
+      <button class="button primary auth-submit" type="submit"><i data-lucide="user-plus"></i> إنشاء الحساب</button>
+      <p class="auth-switch">لديك حساب بالفعل؟ <a  class="auth-guest-link"href="login.html">تسجيل الدخول</a></p>
+    </form>
+  </section>
+  <aside class="auth-side">
+    <div class="auth-side-icon"><i data-lucide="sparkles"></i></div>
+    <h2>ابدأ رحلتك الاستثمارية بوضوح</h2>
+    <p>واجهة إنشاء الحساب جاهزة للربط لاحقاً مع Supabase لحفظ المحافظ والمستخدمين.</p>
+    <div class="auth-benefits">
+      <span><i data-lucide="target"></i> أهداف شخصية</span>
+      <span><i data-lucide="line-chart"></i> أداء متوقع</span>
+      <span><i data-lucide="database"></i> حفظ البيانات</span>
+    </div>
+  </aside>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="security.js"></script>
+<script src="auth-ui.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
