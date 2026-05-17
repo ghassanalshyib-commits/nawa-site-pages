@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://USERNAME.github.io/REPOSITORY/sitemap.xml
+Sitemap: https://ghassanalshyib-commits.github.io/nawa-site-pages/sitemap.xml

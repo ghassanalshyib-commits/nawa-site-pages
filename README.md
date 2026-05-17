@@ -37,10 +37,10 @@ http://localhost:8080/
 5. بعد النشر سيكون الرابط غالباً:
 
 ```text
-https://USERNAME.github.io/REPOSITORY/
+https://ghassanalshyib-commits.github.io/nawa-site-pages/
 ```
 
-استبدل `USERNAME` باسم حساب GitHub و`REPOSITORY` باسم المستودع.
+الرابط الحالي للنسخة المنشورة هو `https://ghassanalshyib-commits.github.io/nawa-site-pages/`.
 
 ## إعداد Supabase
 
@@ -52,14 +52,14 @@ https://USERNAME.github.io/REPOSITORY/
 4. أضف روابط التحويل التالية:
 
 ```text
-https://USERNAME.github.io/REPOSITORY/**
-https://USERNAME.github.io/REPOSITORY/reset-password.html
+https://ghassanalshyib-commits.github.io/nawa-site-pages/**
+https://ghassanalshyib-commits.github.io/nawa-site-pages/reset-password.html
 ```
 
 الموقع يستخدم `anon public key` فقط داخل الواجهة. لا تضف `service_role key` إلى ملفات الموقع.
 
 ## ملاحظات الإطلاق
 
-ملفات الروابط الداخلية مضبوطة لتعمل داخل مسار مستودع GitHub Pages الفرعي، مثل `/REPOSITORY/`. بعد معرفة رابط GitHub Pages النهائي، حدّث `robots.txt` و`sitemap.xml` بالرابط الحقيقي.
+ملفات الروابط الداخلية مضبوطة لتعمل داخل مسار مستودع GitHub Pages الفرعي، و`robots.txt` و`sitemap.xml` يستخدمان رابط النشر الحالي.
 
 المحتوى تعليمي ولا يمثل توصية استثمارية.
