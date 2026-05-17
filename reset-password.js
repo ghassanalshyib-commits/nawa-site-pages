@@ -26,12 +26,12 @@ async function prepareResetSession() {
       type: "recovery"
     });
     if (error) {
-      showResetMessage("طھط¹ط°ط± طھظپط¹ظٹظ„ ط±ط§ط¨ط· ط§ظ„ط§ط³طھط±ط¬ط§ط¹: " + error.message, "error");
+      showResetMessage("تعذر تفعيل رابط الاسترجاع: " + error.message, "error");
       return false;
     }
     canUpdatePassword = true;
     window.history.replaceState(null, document.title, window.location.pathname);
-    showResetMessage("طھظ… ط§ظ„طھط­ظ‚ظ‚ ظ…ظ† ط±ط§ط¨ط· ط§ظ„ط§ط³طھط±ط¬ط§ط¹. ظٹظ…ظƒظ†ظƒ طھط¹ظٹظٹظ† ظƒظ„ظ…ط© ظ…ط±ظˆط± ط¬ط¯ظٹط¯ط©.", "success");
+    showResetMessage("تم التحقق من رابط الاسترجاع. يمكنك تعيين كلمة مرور جديدة.", "success");
     return true;
   }
   if (type === "recovery" && access_token && refresh_token) {
